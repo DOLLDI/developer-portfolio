@@ -2,16 +2,38 @@
 import { motion } from "framer-motion";
 
 const skills = [
+  // Основные языки и технологии
   "Python (asyncio, backend logic)",
   "JavaScript / Node.js",
-  "aiogram / Telethon / Telegraf",
-  "Telegram Mini Apps (Web App API)",
-  "SQL (SQLite, PostgreSQL)",
+  "TypeScript",
   "HTML / CSS (адаптивная вёрстка)",
+  "SQL (SQLite, PostgreSQL)",
   "REST API",
   "Асинхронное программирование",
   "Git, GitHub Pages",
-  "Интеграция AI"
+  "Интеграция AI",
+  // Telegram/боты
+  "aiogram / Telethon / Telegraf",
+  "Telegram Mini Apps (Web App API)",
+  // Фреймворки и библиотеки
+  "Next.js",
+  "Framer Motion",
+  "TailwindCSS",
+  "@headlessui/react",
+  "@heroicons/react",
+  // Инфраструктура и инструменты
+  "Vercel (деплой)",
+  "ESLint",
+  "Autoprefixer",
+  "JWT (jsonwebtoken)",
+  "bcryptjs",
+  // Типизация и инструменты разработки
+  "TypeScript",
+  "@types/node / @types/react",
+  // Безопасность и авторизация
+  "@auth/core",
+  // PostCSS
+  "@tailwindcss/postcss"
 ];
 
 export default function Skills() {
