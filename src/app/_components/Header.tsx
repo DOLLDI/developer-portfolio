@@ -20,8 +20,12 @@ export default function Header() {
       className="sticky top-0 z-30 w-full bg-gradient-to-b from-neutral-950/90 to-neutral-950/60 backdrop-blur border-b border-neutral-800 shadow-sm"
     >
       <nav className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
-        <motion.div whileHover={{ boxShadow: "0 0 24px 0px #06b6d4cc", scale: 1.04 }} className="inline-block">
-          <Link href="/" className="text-2xl font-bold text-cyan-400 tracking-tight transition-shadow">
+        <motion.div className="inline-block">
+          <Link
+            href="/"
+            className="text-2xl font-bold text-cyan-400 tracking-tight transition-shadow"
+            style={{ textShadow: "0 0 24px #06b6d4cc, 0 0 8px #06b6d4cc" }}
+          >
             Сергей | Автоматизация
           </Link>
         </motion.div>
