@@ -85,7 +85,7 @@ export default function ProjectsPage() {
             href={`https://github.com/DOLLDI/${p.repo}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
             tabIndex={0}
             aria-label={p.title}
           >
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-gradient-to-br from-neutral-900 to-neutral-950 rounded-2xl p-6 shadow-xl border border-neutral-800 hover:scale-[1.03] transition-transform flex flex-col gap-3"
+              className="bg-gradient-to-br from-neutral-900 to-neutral-950 rounded-2xl p-6 shadow-xl border border-neutral-800 hover:scale-[1.03] transition-transform flex flex-col gap-3 min-h-[260px] h-full"
             >
               <h2 className="text-xl font-semibold text-cyan-400 mb-1">{p.title}</h2>
               <p className="text-neutral-200 text-base flex-1">{p.description}</p>
