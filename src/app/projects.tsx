@@ -79,32 +79,29 @@ export default function Projects() {
       </motion.h2>
       <div className="grid gap-8 md:grid-cols-2">
         {projects.map((p, i) => (
-          <motion.div
+          <a
             key={p.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-800 hover:scale-[1.03] transition-transform cursor-pointer block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-            whileHover={{ boxShadow: "0 0 32px 0px #06b6d4cc", scale: 1.04 }}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
             tabIndex={0}
+            aria-label={p.title}
           >
-            <a
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute inset-0 z-10"
-              style={{ position: "absolute", inset: 0, zIndex: 10 }}
-              aria-label={p.title}
-              tabIndex={-1}
-            />
-            <div className="relative z-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-800 hover:scale-[1.03] transition-transform cursor-pointer"
+              whileHover={{ boxShadow: "0 0 32px 0px #06b6d4cc", scale: 1.04 }}
+            >
               <h3 className="text-xl font-semibold mb-2 text-cyan-400 hover:underline">
                 {p.title}
               </h3>
               <p className="text-neutral-300 text-base">{p.description}</p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </a>
         ))}
       </div>
     </motion.section>
