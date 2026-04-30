@@ -26,16 +26,7 @@ const skills = [
   // Инфраструктура и инструменты
   "Vercel (деплой)",
   "ESLint",
-  "Autoprefixer",
-  "JWT (jsonwebtoken)",
-  "bcryptjs",
-  // Типизация и инструменты разработки
-  "TypeScript",
-  "@types/node / @types/react",
-  // Безопасность и авторизация
-  "@auth/core",
-  // PostCSS
-  "@tailwindcss/postcss"
+  "Autoprefixer"
 ];
 
 export default function SkillsPage() {
