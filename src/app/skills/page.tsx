@@ -5,6 +5,8 @@ const skills = [
   // Основные языки и технологии
   "Python (asyncio, backend logic)",
   "JavaScript / Node.js",
+  "Парсинг данных",
+  "Работа с внешними API",
   "TypeScript",
   "HTML / CSS (адаптивная вёрстка)",
   "SQL (SQLite, PostgreSQL)",
