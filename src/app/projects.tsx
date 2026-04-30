@@ -79,11 +79,8 @@ export default function Projects() {
       </motion.h2>
       <div className="grid gap-8 md:grid-cols-2">
         {projects.map((p, i) => (
-          <motion.a
+          <motion.div
             key={p.title}
-            href={p.link}
-            target="_blank"
-            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -92,11 +89,22 @@ export default function Projects() {
             whileHover={{ boxShadow: "0 0 32px 0px #06b6d4cc", scale: 1.04 }}
             tabIndex={0}
           >
-            <h3 className="text-xl font-semibold mb-2 text-cyan-400 hover:underline">
-              {p.title}
-            </h3>
-            <p className="text-neutral-300 text-base">{p.description}</p>
-          </motion.a>
+            <a
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 z-10"
+              style={{ position: "absolute", inset: 0, zIndex: 10 }}
+              aria-label={p.title}
+              tabIndex={-1}
+            />
+            <div className="relative z-20">
+              <h3 className="text-xl font-semibold mb-2 text-cyan-400 hover:underline">
+                {p.title}
+              </h3>
+              <p className="text-neutral-300 text-base">{p.description}</p>
+            </div>
+          </motion.div>
         ))}
       </div>
     </motion.section>
