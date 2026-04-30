@@ -31,14 +31,29 @@ export default function Header() {
         </motion.div>
         <div className="hidden md:flex gap-6">
           {navLinks.map((link) => (
-            <motion.div key={link.href} whileHover={{ boxShadow: "0 0 16px 0px #06b6d4aa", scale: 1.06 }} className="inline-block">
+            <div key={link.href} className="inline-block">
               <Link
                 href={link.href}
                 className="text-lg font-medium text-neutral-200 hover:text-cyan-400 transition-colors px-1 rounded"
+                style={{
+                  transition: 'text-shadow 0.3s',
+                }}
+                onMouseEnter={e => {
+                  (e.target as HTMLElement).style.textShadow = '0 0 16px #06b6d4cc, 0 0 6px #06b6d4cc';
+                }}
+                onMouseLeave={e => {
+                  (e.target as HTMLElement).style.textShadow = '';
+                }}
+                onFocus={e => {
+                  (e.target as HTMLElement).style.textShadow = '0 0 16px #06b6d4cc, 0 0 6px #06b6d4cc';
+                }}
+                onBlur={e => {
+                  (e.target as HTMLElement).style.textShadow = '';
+                }}
               >
                 {link.label}
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
         <button
@@ -59,15 +74,30 @@ export default function Header() {
           className="md:hidden bg-neutral-950/95 px-4 pb-4 flex flex-col gap-4 border-b border-neutral-800"
         >
           {navLinks.map((link) => (
-            <motion.div key={link.href} whileHover={{ boxShadow: "0 0 16px 0px #06b6d4aa", scale: 1.06 }} className="inline-block">
+            <div key={link.href} className="inline-block">
               <Link
                 href={link.href}
                 className="text-lg font-medium text-neutral-200 hover:text-cyan-400 transition-colors px-1 rounded"
+                style={{
+                  transition: 'text-shadow 0.3s',
+                }}
+                onMouseEnter={e => {
+                  (e.target as HTMLElement).style.textShadow = '0 0 16px #06b6d4cc, 0 0 6px #06b6d4cc';
+                }}
+                onMouseLeave={e => {
+                  (e.target as HTMLElement).style.textShadow = '';
+                }}
+                onFocus={e => {
+                  (e.target as HTMLElement).style.textShadow = '0 0 16px #06b6d4cc, 0 0 6px #06b6d4cc';
+                }}
+                onBlur={e => {
+                  (e.target as HTMLElement).style.textShadow = '';
+                }}
                 onClick={() => setOpen(false)}
               >
                 {link.label}
               </Link>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
       )}
