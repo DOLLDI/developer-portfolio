@@ -29,6 +29,22 @@ export default function Contacts() {
           Telegram: @rhipi
         </a>
         <a
+          href="https://wa.me/996755165165"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lg font-semibold text-green-400 hover:underline"
+        >
+          WhatsApp: +996 755 165 165
+        </a>
+        <a
+          href="https://www.instagram.com/botforge_it/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lg font-semibold text-pink-400 hover:underline"
+        >
+          Instagram: @botforge_it
+        </a>
+        <a
           href="https://kwork.ru/user/inexitus"
           target="_blank"
           rel="noopener noreferrer"
