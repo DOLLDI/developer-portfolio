@@ -3,13 +3,13 @@ import Link from "next/link";
 import { forwardRef } from "react";
 
 // Универсальная кнопка/ссылка с поддержкой внешних и внутренних переходов и кастомизацией стилей
-const base = "px-8 py-3 rounded-lg font-semibold shadow-lg hover:scale-105 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60";
+const base = "px-8 py-3 rounded-lg font-semibold shadow-lg hover:scale-105 transition-all focus:outline-none focus-visible:shadow-[0_0_24px_0px_#06b6d4cc] hover:shadow-[0_0_32px_0px_#06b6d4cc]";
 
 const palette = {
   primary: "bg-gradient-to-r from-blue-600 to-cyan-500 text-white",
-  accent: "bg-gradient-to-r from-cyan-400 to-blue-500 text-white ring-2 ring-cyan-300/40 hover:ring-4",
-  kwork: "bg-gradient-to-r from-cyan-400 to-emerald-500 text-white ring-2 ring-cyan-300/40 hover:ring-4",
-  github: "bg-gradient-to-r from-blue-500 to-gray-800 text-white ring-2 ring-blue-300/40 hover:ring-4",
+  accent: "bg-gradient-to-r from-cyan-400 to-blue-500 text-white",
+  kwork: "bg-gradient-to-r from-cyan-400 to-emerald-500 text-white",
+  github: "bg-gradient-to-r from-blue-500 to-gray-800 text-white",
 };
 
 interface ButtonProps {
