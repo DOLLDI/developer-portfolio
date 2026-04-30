@@ -24,7 +24,19 @@ export default function Header() {
           <Link
             href="/"
             className="text-2xl font-bold text-cyan-400 tracking-tight transition-shadow"
-            style={{ textShadow: "0 0 24px #06b6d4cc, 0 0 8px #06b6d4cc" }}
+            style={{ transition: 'text-shadow 0.3s' }}
+            onMouseEnter={e => {
+              (e.target as HTMLElement).style.textShadow = '0 0 24px #06b6d4cc, 0 0 8px #06b6d4cc';
+            }}
+            onMouseLeave={e => {
+              (e.target as HTMLElement).style.textShadow = '';
+            }}
+            onFocus={e => {
+              (e.target as HTMLElement).style.textShadow = '0 0 24px #06b6d4cc, 0 0 8px #06b6d4cc';
+            }}
+            onBlur={e => {
+              (e.target as HTMLElement).style.textShadow = '';
+            }}
           >
             Сергей | Автоматизация
           </Link>
