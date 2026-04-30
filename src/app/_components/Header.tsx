@@ -1,0 +1,72 @@
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+const navLinks = [
+  { href: "/", label: "Главная" },
+  { href: "/projects", label: "Проекты" },
+  { href: "/skills", label: "Навыки" },
+  { href: "/contacts", label: "Контакты" },
+];
+
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  return (
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="sticky top-0 z-30 w-full bg-gradient-to-b from-neutral-950/90 to-neutral-950/60 backdrop-blur border-b border-neutral-800 shadow-sm"
+    >
+      <nav className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
+        <motion.div whileHover={{ boxShadow: "0 0 24px 0px #06b6d4cc", scale: 1.04 }} className="inline-block">
+          <Link href="/" className="text-2xl font-bold text-cyan-400 tracking-tight transition-shadow">
+            Сергей | Автоматизация
+          </Link>
+        </motion.div>
+        <div className="hidden md:flex gap-6">
+          {navLinks.map((link) => (
+            <motion.div key={link.href} whileHover={{ boxShadow: "0 0 16px 0px #06b6d4aa", scale: 1.06 }} className="inline-block">
+              <Link
+                href={link.href}
+                className="text-lg font-medium text-neutral-200 hover:text-cyan-400 transition-colors px-1 rounded"
+              >
+                {link.label}
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+        <button
+          className="md:hidden flex flex-col gap-1.5 group"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Открыть меню"
+        >
+          <span className="w-7 h-0.5 bg-cyan-400 rounded transition-all group-hover:scale-x-110" />
+          <span className="w-7 h-0.5 bg-cyan-400 rounded transition-all group-hover:scale-x-110" />
+          <span className="w-7 h-0.5 bg-cyan-400 rounded transition-all group-hover:scale-x-110" />
+        </button>
+      </nav>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden bg-neutral-950/95 px-4 pb-4 flex flex-col gap-4 border-b border-neutral-800"
+        >
+          {navLinks.map((link) => (
+            <motion.div key={link.href} whileHover={{ boxShadow: "0 0 16px 0px #06b6d4aa", scale: 1.06 }} className="inline-block">
+              <Link
+                href={link.href}
+                className="text-lg font-medium text-neutral-200 hover:text-cyan-400 transition-colors px-1 rounded"
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+      )}
+    </motion.header>
+  );
+}
