@@ -79,27 +79,24 @@ export default function Projects() {
       </motion.h2>
       <div className="grid gap-8 md:grid-cols-2">
         {projects.map((p, i) => (
-          <motion.div
+          <motion.a
             key={p.title}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-800 hover:scale-[1.03] transition-transform"
+            className="bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-800 hover:scale-[1.03] transition-transform cursor-pointer block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
             whileHover={{ boxShadow: "0 0 32px 0px #06b6d4cc", scale: 1.04 }}
+            tabIndex={0}
           >
-            <h3 className="text-xl font-semibold mb-2">
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline text-cyan-400"
-              >
-                {p.title}
-              </a>
+            <h3 className="text-xl font-semibold mb-2 text-cyan-400 hover:underline">
+              {p.title}
             </h3>
             <p className="text-neutral-300 text-base">{p.description}</p>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </motion.section>
